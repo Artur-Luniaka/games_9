@@ -109,13 +109,13 @@ const contactModal = {
               <ul>
                 <li>
                   <strong>Email:</strong>
-                  support@nexusgaming.com
+                  support@RewardTheSkillPlay.com
                 </li>
                 <li>
                   <strong>Phone:</strong>
-                  +1 234 567 890
+                  +61 2 9900 6731
                 </li>
-                <li><strong>Address:</strong> 123 Game St, Cyber City, 10101</li>
+                <li><strong>Address:</strong> 14 Elphinstone Road<br>Mount Stuart TAS 7000<br>Australia</li>
               </ul>
             </div>
             <div class="contact-map-block">

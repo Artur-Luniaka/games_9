@@ -993,3 +993,61 @@
     height: 50px;
   }
 }
+
+#scroll-to-top-btn {
+  position: fixed;
+  right: 2.2rem;
+  bottom: 2.2rem;
+  z-index: 12000;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#scroll-to-top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-to-top-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3fd8c2 0%, #a18fff 50%, #ff7fd8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(161, 143, 255, 0.18);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+#scroll-to-top-btn:hover .scroll-to-top-circle {
+  box-shadow: 0 8px 32px rgba(255, 127, 216, 0.22);
+  transform: translateY(-4px) scale(1.07);
+}
+
+.scroll-to-top-circle svg {
+  display: block;
+  stroke: #fff;
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 600px) {
+  #scroll-to-top-btn {
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .scroll-to-top-circle {
+    width: 44px;
+    height: 44px;
+  }
+  .scroll-to-top-circle svg {
+    width: 24px;
+    height: 24px;
+  }
+}

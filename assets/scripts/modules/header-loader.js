@@ -171,13 +171,16 @@ class NexusHeaderLoader {
             <header class="site-header">
                 <div class="header-container">
                     <div class="header-logo">
-                        <a href="index.html" class="logo-link">
-                            <span class="logo-text">NexusGaming</span>
+                        <a href="./" class="logo-link">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                          </svg>
+                          <span class="logo-text">RewardTheSkillPlay.com</span>
                         </a>
                     </div>
                     <nav class="header-navigation">
                         <ul class="nav-list">
-                            <li><a href="index.html" class="nav-link">Home</a></li>
+                            <li><a href="./" class="nav-link">Home</a></li>
                             <li><a href="catalog.html" class="nav-link">Games</a></li>
                             <li><a href="#" class="nav-link" id="contact-link-fallback">Contact</a></li>
                         </ul>

@@ -25,14 +25,14 @@ const headerLoader = {
       headerPlaceholder.innerHTML = `
                 <header class="site-header">
                     <div class="header-container">
-                        <a href="index.html" class="logo">
+                        <a href="./" class="logo">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                             </svg>
-                            <span>NexusGaming</span>
+                            <span>RewardTheSkillPlay.com</span>
                         </a>
                         <nav class="nav-menu">
-                            <a href="index.html" class="nav-link">Home</a>
+                            <a href="./" class="nav-link">Home</a>
                             <a href="catalog.html" class="nav-link">Catalog</a>
                             <button type="button" class="nav-link" id="contact-link-fallback">Contact</button>
                         </nav>
@@ -54,7 +54,7 @@ const headerLoader = {
                     </div>
                     <nav class="mobile-nav" id="mobile-nav">
                         <div class="nav-menu">
-                            <a href="index.html" class="nav-link">Home</a>
+                            <a href="./" class="nav-link">Home</a>
                             <a href="catalog.html" class="nav-link">Catalog</a>
                             <button type="button" class="nav-link" id="contact-link-fallback-mobile">Contact</button>
                         </div>

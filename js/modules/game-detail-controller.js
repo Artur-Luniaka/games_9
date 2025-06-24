@@ -50,7 +50,7 @@ class GameDetailController {
 
   updatePageContent() {
     // Update page title
-    document.title = `${this.gameData.title} - NexusGaming Store`;
+    document.title = `${this.gameData.title} - RewardTheSkillPlay.com`;
 
     // Update breadcrumb
     document.getElementById("game-title-breadcrumb").textContent =

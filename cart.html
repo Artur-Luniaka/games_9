@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart - NexusGaming Store</title>
+    <title>Shopping Cart - RewardTheSkillPlay.com</title>
     <meta
       name="description"
       content="Review your cart and complete your purchase. Secure checkout for PC and Xbox games."
     />
+    <link rel="icon" href="assets/public/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/core/base.css" />
     <link rel="stylesheet" href="css/core/variables.css" />
     <link rel="stylesheet" href="css/components/header.css" />
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="css/components/notification-system.css" />
     <link rel="stylesheet" href="css/pages/cart.css" />
     <link rel="stylesheet" href="css/components/contact-modal.css" />
+    <link rel="stylesheet" href="css/components/scroll-to-top.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
@@ -28,7 +30,7 @@
 
         <div class="cart-hero-content">
           <div class="cart-breadcrumb">
-            <a href="index.html">Home</a>
+            <a href="./">Home</a>
             <span class="separator">/</span>
             <a href="catalog.html">Games</a>
             <span class="separator">/</span>
@@ -91,7 +93,7 @@
                 </button>
                 <button
                   class="featured-games-btn"
-                  onclick="window.location.href='index.html'"
+                  onclick="window.location.href='./'"
                 >
                   <svg
                     width="20"
@@ -494,5 +496,6 @@
     <script src="js/modules/contact-modal.js"></script>
     <script src="js/modules/cart-manager.js"></script>
     <script src="js/modules/notification-system.js"></script>
+    <script src="js/modules/scroll-to-top.js"></script>
   </body>
 </html>

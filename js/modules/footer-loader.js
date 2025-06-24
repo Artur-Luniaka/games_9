@@ -160,3 +160,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Export for use in other modules
 window.footerLoader = footerLoader;
+
+// Scroll to Top Button
+(function setupScrollToTopLogic() {
+  const btn = document.getElementById("scroll-to-top-btn");
+  if (!btn) return;
+
+  function getFirstSectionOffset() {
+    // Находим первую секцию main > section или просто первый section
+    const main = document.querySelector("main");
+    let firstSection = main
+      ? main.querySelector("section")
+      : document.querySelector("section");
+    if (firstSection) {
+      const rect = firstSection.getBoundingClientRect();
+      return rect.top + window.scrollY + rect.height;
+    }
+    return 400; // fallback
+  }
+
+  function onScroll() {
+    const triggerOffset = getFirstSectionOffset();
+    if (window.scrollY > triggerOffset) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  btn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();

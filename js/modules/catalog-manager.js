@@ -1,16 +1,12 @@
-// Catalog Manager Module - Handles game filtering, searching, and display
+// Catalog Manager Module - New Design with Genre Filters and Load More
 class CatalogManager {
   constructor() {
     this.gamesData = [];
     this.filteredGames = [];
-    this.currentFilters = {
-      search: "",
-      platform: "",
-      genre: "",
-      priceRange: "",
-      rating: "",
-    };
-    this.currentSort = "name";
+    this.displayedGames = [];
+    this.currentGenre = "all";
+    this.gamesPerPage = 6;
+    this.currentPage = 1;
 
     this.init();
   }
@@ -20,6 +16,7 @@ class CatalogManager {
       await this.loadGamesData();
       this.setupEventListeners();
       this.renderGames();
+      this.updateLoadMoreButton();
     } catch (error) {
       console.error("Error initializing catalog manager:", error);
     }
@@ -27,186 +24,90 @@ class CatalogManager {
 
   async loadGamesData() {
     try {
-      const response = await fetch("data/games.json");
+      const response = await fetch("assets/data/games.json");
       const data = await response.json();
-      this.gamesData = data.games;
+      this.gamesData = data.featured_games;
       this.filteredGames = [...this.gamesData];
+      this.displayedGames = this.filteredGames.slice(0, this.gamesPerPage);
     } catch (error) {
       console.error("Error loading games data:", error);
       this.gamesData = [];
       this.filteredGames = [];
+      this.displayedGames = [];
     }
   }
 
   setupEventListeners() {
-    // Search functionality
-    const searchInput = document.getElementById("game-search");
-    const searchBtn = document.querySelector(".catalog-search-btn");
-
-    searchInput.addEventListener("input", (e) => {
-      this.currentFilters.search = e.target.value.toLowerCase();
-      this.applyFilters();
-    });
-
-    searchBtn.addEventListener("click", () => {
-      this.applyFilters();
-    });
-
-    searchInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        this.applyFilters();
-      }
-    });
-
-    // Filter dropdowns
-    const filterSelects = [
-      "platform-filter",
-      "genre-filter",
-      "price-filter",
-      "rating-filter",
-    ];
-
-    filterSelects.forEach((filterId) => {
-      const select = document.getElementById(filterId);
-      if (select) {
-        select.addEventListener("change", (e) => {
-          const filterType = filterId.replace("-filter", "");
-          this.currentFilters[filterType] = e.target.value;
-          this.applyFilters();
-        });
-      }
-    });
-
-    // Sort functionality
-    const sortSelect = document.getElementById("sort-select");
-    if (sortSelect) {
-      sortSelect.addEventListener("change", (e) => {
-        this.currentSort = e.target.value;
-        this.sortGames();
-        this.renderGames();
+    // Genre filter buttons
+    document.querySelectorAll(".genre-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const genre = e.currentTarget.dataset.genre;
+        this.filterByGenre(genre);
       });
-    }
+    });
 
-    // Clear filters
-    const clearFiltersBtn = document.getElementById("clear-filters");
-    if (clearFiltersBtn) {
-      clearFiltersBtn.addEventListener("click", () => {
-        this.clearAllFilters();
-      });
-    }
-
-    // Reset search
-    const resetSearchBtn = document.getElementById("reset-search");
-    if (resetSearchBtn) {
-      resetSearchBtn.addEventListener("click", () => {
-        this.clearAllFilters();
+    // Load more button
+    const loadMoreBtn = document.getElementById("load-more-btn");
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener("click", () => {
+        this.loadMoreGames();
       });
     }
   }
 
-  applyFilters() {
-    this.filteredGames = this.gamesData.filter((game) => {
-      // Search filter
-      if (this.currentFilters.search) {
-        const searchTerm = this.currentFilters.search.toLowerCase();
-        const matchesSearch =
-          game.title.toLowerCase().includes(searchTerm) ||
-          game.description.toLowerCase().includes(searchTerm) ||
-          game.genre.toLowerCase().includes(searchTerm) ||
-          game.developer.toLowerCase().includes(searchTerm);
-
-        if (!matchesSearch) return false;
-      }
-
-      // Platform filter
-      if (this.currentFilters.platform) {
-        const platforms = this.currentFilters.platform.split(",");
-        const gamePlatforms = game.platforms.split(",");
-        const hasMatchingPlatform = platforms.some((platform) =>
-          gamePlatforms.includes(platform.trim())
-        );
-        if (!hasMatchingPlatform) return false;
-      }
-
-      // Genre filter
-      if (
-        this.currentFilters.genre &&
-        game.genre !== this.currentFilters.genre
-      ) {
-        return false;
-      }
-
-      // Price range filter
-      if (this.currentFilters.priceRange) {
-        const price = parseFloat(game.price);
-        const [min, max] = this.currentFilters.priceRange
-          .split("-")
-          .map((p) => (p === "+" ? Infinity : parseFloat(p)));
-
-        if (this.currentFilters.priceRange === "60+") {
-          if (price < 60) return false;
-        } else {
-          if (price < min || price > max) return false;
-        }
-      }
-
-      // Rating filter
-      if (this.currentFilters.rating) {
-        const minRating = parseFloat(this.currentFilters.rating);
-        if (game.rating < minRating) return false;
-      }
-
-      return true;
+  filterByGenre(genre) {
+    // Update active button
+    document.querySelectorAll(".genre-btn").forEach((btn) => {
+      btn.classList.remove("active");
     });
+    document.querySelector(`[data-genre="${genre}"]`).classList.add("active");
 
-    this.sortGames();
+    // Filter games
+    this.currentGenre = genre;
+    this.currentPage = 1;
+
+    if (genre === "all") {
+      this.filteredGames = [...this.gamesData];
+    } else {
+      this.filteredGames = this.gamesData.filter(
+        (game) => game.genre === genre
+      );
+    }
+
+    // Update displayed games
+    this.displayedGames = this.filteredGames.slice(0, this.gamesPerPage);
+
+    // Render first, then update load more button
     this.renderGames();
+    this.updateLoadMoreButton();
   }
 
-  sortGames() {
-    this.filteredGames.sort((a, b) => {
-      switch (this.currentSort) {
-        case "name":
-          return a.title.localeCompare(b.title);
-        case "name-desc":
-          return b.title.localeCompare(a.title);
-        case "price-low":
-          return parseFloat(a.price) - parseFloat(b.price);
-        case "price-high":
-          return parseFloat(b.price) - parseFloat(a.price);
-        case "rating":
-          return b.rating - a.rating;
-        case "release":
-          return new Date(b.releaseDate) - new Date(a.releaseDate);
-        default:
-          return 0;
-      }
-    });
-  }
+  loadMoreGames() {
+    const startIndex = this.currentPage * this.gamesPerPage;
+    const endIndex = startIndex + this.gamesPerPage;
+    const newGames = this.filteredGames.slice(startIndex, endIndex);
 
-  clearAllFilters() {
-    // Reset filter values
-    this.currentFilters = {
-      search: "",
-      platform: "",
-      genre: "",
-      priceRange: "",
-      rating: "",
-    };
+    this.displayedGames = [...this.displayedGames, ...newGames];
+    this.currentPage++;
 
-    // Reset form elements
-    document.getElementById("game-search").value = "";
-    document.getElementById("platform-filter").value = "";
-    document.getElementById("genre-filter").value = "";
-    document.getElementById("price-filter").value = "";
-    document.getElementById("rating-filter").value = "";
-    document.getElementById("sort-select").value = "name";
-
-    // Reset data
-    this.filteredGames = [...this.gamesData];
-    this.currentSort = "name";
-    this.sortGames();
     this.renderGames();
+    this.updateLoadMoreButton();
+  }
+
+  updateLoadMoreButton() {
+    const loadMoreContainer = document.getElementById("load-more-container");
+    if (!loadMoreContainer) return;
+
+    const totalPages = Math.ceil(this.filteredGames.length / this.gamesPerPage);
+
+    if (
+      this.currentPage >= totalPages ||
+      this.filteredGames.length <= this.gamesPerPage
+    ) {
+      loadMoreContainer.style.display = "none";
+    } else {
+      loadMoreContainer.style.display = "block";
+    }
   }
 
   renderGames() {
@@ -233,14 +134,14 @@ class CatalogManager {
     }
 
     // Render games
-    const gamesHTML = this.filteredGames
+    const gamesHTML = this.displayedGames
       .map(
         (game, index) => `
             <div class="game-card" data-game-id="${
               game.id
             }" style="animation-delay: ${index * 0.1}s">
                 <div class="game-image-container">
-                    <img src="${game.image}" alt="${
+                    <img src="assets/public/${game.image}" alt="${
           game.title
         }" class="game-image">
                     <div class="game-overlay">
@@ -252,7 +153,7 @@ class CatalogManager {
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
                                 </svg>
-                                Quick View
+                                View
                             </button>
                             <button class="add-to-cart-btn" data-game-id="${
                               game.id
@@ -291,7 +192,11 @@ class CatalogManager {
                     
                     <div class="game-meta">
                         <span class="game-genre">${game.genre}</span>
-                        <span class="game-platforms">${game.platforms}</span>
+                        <span class="game-platforms">${
+                          Array.isArray(game.platforms)
+                            ? game.platforms.join(", ")
+                            : game.platforms
+                        }</span>
                     </div>
                     
                     <div class="game-footer">
@@ -335,12 +240,29 @@ class CatalogManager {
   }
 
   setupGameCardEvents() {
-    // Quick view buttons
+    // Game card click - navigate to game details
+    document.querySelectorAll(".game-card").forEach((card) => {
+      card.addEventListener("click", (e) => {
+        // Don't navigate if clicking on buttons
+        if (
+          e.target.closest(".quick-view-btn") ||
+          e.target.closest(".add-to-cart-btn") ||
+          e.target.closest(".buy-now-btn")
+        ) {
+          return;
+        }
+
+        const gameId = card.dataset.gameId;
+        this.navigateToGameDetails(gameId);
+      });
+    });
+
+    // View buttons - navigate to game details
     document.querySelectorAll(".quick-view-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
         const gameId = btn.dataset.gameId;
-        this.openQuickView(gameId);
+        this.navigateToGameDetails(gameId);
       });
     });
 
@@ -361,6 +283,11 @@ class CatalogManager {
         this.buyNow(gameId);
       });
     });
+  }
+
+  navigateToGameDetails(gameId) {
+    // Navigate to game detail page
+    window.location.href = `game-detail.html?id=${gameId}`;
   }
 
   openQuickView(gameId) {
@@ -391,7 +318,7 @@ class CatalogManager {
         price: game.discount
           ? (parseFloat(game.price) * (1 - game.discount / 100)).toFixed(2)
           : game.price,
-        image: game.image,
+        image: `assets/public/${game.image}`,
         quantity: 1,
       });
     }

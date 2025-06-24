@@ -110,6 +110,17 @@ const heroController = {
   },
 };
 
+// Функция для прокрутки к секции Live Game Showcase
+function scrollToShowcase() {
+  const showcaseSection = document.querySelector(".live-showcase-section");
+  if (showcaseSection) {
+    showcaseSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}
+
 // Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   heroController.initialize();
@@ -126,3 +137,4 @@ document.addEventListener("visibilitychange", () => {
 
 // Export for use in other modules
 window.heroController = heroController;
+window.scrollToShowcase = scrollToShowcase;

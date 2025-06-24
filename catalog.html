@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/components/footer.css" />
     <link rel="stylesheet" href="css/components/quick-view-modal.css" />
     <link rel="stylesheet" href="css/components/notification-system.css" />
-    <link rel="stylesheet" href="css/components/game-cards.css" />
     <link rel="stylesheet" href="css/pages/catalog.css" />
     <link rel="stylesheet" href="css/components/contact-modal.css" />
   </head>
@@ -23,84 +22,88 @@
 
     <main class="catalog-main">
       <section class="catalog-hero">
+        <div class="catalog-hero-background">
+          <div class="hero-gradient-overlay"></div>
+          <div class="hero-particles"></div>
+        </div>
         <div class="catalog-hero-content">
-          <h1 class="catalog-title">Game Catalog</h1>
-          <p class="catalog-subtitle">Discover your next gaming adventure</p>
-          <div class="catalog-search-container">
-            <input
-              type="text"
-              id="game-search"
-              placeholder="Search games..."
-              class="catalog-search-input"
-            />
-            <button class="catalog-search-btn">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-              </svg>
-            </button>
+          <div class="hero-text-content">
+            <h1 class="catalog-hero-title">
+              <span class="title-line">Discover Your</span>
+              <span class="title-line gradient-text">Gaming Universe</span>
+            </h1>
+            <p class="catalog-hero-subtitle">
+              Explore our curated collection of premium PC and Xbox games. From
+              epic AAA adventures to hidden indie gems, find your next gaming
+              masterpiece.
+            </p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Games</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Support</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Official</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="floating-game-cards">
+              <div class="game-card-preview card-1">
+                <div class="card-glow"></div>
+              </div>
+              <div class="game-card-preview card-2">
+                <div class="card-glow"></div>
+              </div>
+              <div class="game-card-preview card-3">
+                <div class="card-glow"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="catalog-filters">
         <div class="filters-container">
-          <div class="filter-group">
-            <label for="platform-filter" class="filter-label">Platform</label>
-            <select id="platform-filter" class="filter-select">
-              <option value="">All Platforms</option>
-              <option value="PC">PC</option>
-              <option value="Xbox">Xbox</option>
-              <option value="PC,Xbox">PC & Xbox</option>
-            </select>
+          <div class="genre-filters">
+            <button class="genre-btn active" data-genre="all">
+              <span class="genre-icon">🎮</span>
+              <span class="genre-text">All Games</span>
+            </button>
+            <button class="genre-btn" data-genre="Action">
+              <span class="genre-icon">⚔️</span>
+              <span class="genre-text">Action</span>
+            </button>
+            <button class="genre-btn" data-genre="RPG">
+              <span class="genre-icon">🗡️</span>
+              <span class="genre-text">RPG</span>
+            </button>
+            <button class="genre-btn" data-genre="Adventure">
+              <span class="genre-icon">🗺️</span>
+              <span class="genre-text">Adventure</span>
+            </button>
+            <button class="genre-btn" data-genre="Strategy">
+              <span class="genre-icon">🏰</span>
+              <span class="genre-text">Strategy</span>
+            </button>
+            <button class="genre-btn" data-genre="Sports">
+              <span class="genre-icon">⚽</span>
+              <span class="genre-text">Sports</span>
+            </button>
+            <button class="genre-btn" data-genre="Racing">
+              <span class="genre-icon">🏎️</span>
+              <span class="genre-text">Racing</span>
+            </button>
+            <button class="genre-btn" data-genre="Indie">
+              <span class="genre-icon">🌟</span>
+              <span class="genre-text">Indie</span>
+            </button>
           </div>
-
-          <div class="filter-group">
-            <label for="genre-filter" class="filter-label">Genre</label>
-            <select id="genre-filter" class="filter-select">
-              <option value="">All Genres</option>
-              <option value="Action">Action</option>
-              <option value="Adventure">Adventure</option>
-              <option value="RPG">RPG</option>
-              <option value="Strategy">Strategy</option>
-              <option value="Sports">Sports</option>
-              <option value="Racing">Racing</option>
-              <option value="Simulation">Simulation</option>
-              <option value="Indie">Indie</option>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label for="price-filter" class="filter-label">Price Range</label>
-            <select id="price-filter" class="filter-select">
-              <option value="">All Prices</option>
-              <option value="0-20">Under $20</option>
-              <option value="20-40">$20 - $40</option>
-              <option value="40-60">$40 - $60</option>
-              <option value="60+">Over $60</option>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label for="rating-filter" class="filter-label">Rating</label>
-            <select id="rating-filter" class="filter-select">
-              <option value="">All Ratings</option>
-              <option value="4.5+">4.5+ Stars</option>
-              <option value="4.0+">4.0+ Stars</option>
-              <option value="3.5+">3.5+ Stars</option>
-            </select>
-          </div>
-
-          <button id="clear-filters" class="clear-filters-btn">
-            Clear Filters
-          </button>
         </div>
       </section>
 
@@ -110,21 +113,31 @@
             <div class="results-count">
               <span id="games-count">0</span> games found
             </div>
-            <div class="results-sort">
-              <label for="sort-select" class="sort-label">Sort by:</label>
-              <select id="sort-select" class="sort-select">
-                <option value="name">Name A-Z</option>
-                <option value="name-desc">Name Z-A</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="rating">Rating</option>
-                <option value="release">Release Date</option>
-              </select>
-            </div>
           </div>
 
           <div id="games-grid" class="games-grid">
             <!-- Games will be loaded here -->
+          </div>
+
+          <div
+            id="load-more-container"
+            class="load-more-container"
+            style="display: none"
+          >
+            <button id="load-more-btn" class="load-more-btn">
+              <span>Load More Games</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M7 13l5 5 5-5"></path>
+                <path d="M7 6l5 5 5-5"></path>
+              </svg>
+            </button>
           </div>
 
           <div
@@ -152,10 +165,7 @@
               </svg>
             </div>
             <h3>No games found</h3>
-            <p>Try adjusting your filters or search terms</p>
-            <button id="reset-search" class="reset-search-btn">
-              Reset Search
-            </button>
+            <p>Try selecting a different genre</p>
           </div>
         </div>
       </section>

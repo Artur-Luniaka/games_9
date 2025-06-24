@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Catalog - NexusGaming Store</title>
+    <meta
+      name="description"
+      content="Browse our extensive collection of PC and Xbox games. Find your next adventure with our curated selection of titles."
+    />
+    <link rel="stylesheet" href="css/core/base.css" />
+    <link rel="stylesheet" href="css/core/variables.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/quick-view-modal.css" />
+    <link rel="stylesheet" href="css/components/notification-system.css" />
+    <link rel="stylesheet" href="css/components/game-cards.css" />
+    <link rel="stylesheet" href="css/pages/catalog.css" />
+    <link rel="stylesheet" href="css/components/contact-modal.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="catalog-main">
+      <section class="catalog-hero">
+        <div class="catalog-hero-content">
+          <h1 class="catalog-title">Game Catalog</h1>
+          <p class="catalog-subtitle">Discover your next gaming adventure</p>
+          <div class="catalog-search-container">
+            <input
+              type="text"
+              id="game-search"
+              placeholder="Search games..."
+              class="catalog-search-input"
+            />
+            <button class="catalog-search-btn">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-filters">
+        <div class="filters-container">
+          <div class="filter-group">
+            <label for="platform-filter" class="filter-label">Platform</label>
+            <select id="platform-filter" class="filter-select">
+              <option value="">All Platforms</option>
+              <option value="PC">PC</option>
+              <option value="Xbox">Xbox</option>
+              <option value="PC,Xbox">PC & Xbox</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="genre-filter" class="filter-label">Genre</label>
+            <select id="genre-filter" class="filter-select">
+              <option value="">All Genres</option>
+              <option value="Action">Action</option>
+              <option value="Adventure">Adventure</option>
+              <option value="RPG">RPG</option>
+              <option value="Strategy">Strategy</option>
+              <option value="Sports">Sports</option>
+              <option value="Racing">Racing</option>
+              <option value="Simulation">Simulation</option>
+              <option value="Indie">Indie</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="price-filter" class="filter-label">Price Range</label>
+            <select id="price-filter" class="filter-select">
+              <option value="">All Prices</option>
+              <option value="0-20">Under $20</option>
+              <option value="20-40">$20 - $40</option>
+              <option value="40-60">$40 - $60</option>
+              <option value="60+">Over $60</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="rating-filter" class="filter-label">Rating</label>
+            <select id="rating-filter" class="filter-select">
+              <option value="">All Ratings</option>
+              <option value="4.5+">4.5+ Stars</option>
+              <option value="4.0+">4.0+ Stars</option>
+              <option value="3.5+">3.5+ Stars</option>
+            </select>
+          </div>
+
+          <button id="clear-filters" class="clear-filters-btn">
+            Clear Filters
+          </button>
+        </div>
+      </section>
+
+      <section class="catalog-results">
+        <div class="results-container">
+          <div class="results-header">
+            <div class="results-count">
+              <span id="games-count">0</span> games found
+            </div>
+            <div class="results-sort">
+              <label for="sort-select" class="sort-label">Sort by:</label>
+              <select id="sort-select" class="sort-select">
+                <option value="name">Name A-Z</option>
+                <option value="name-desc">Name Z-A</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Rating</option>
+                <option value="release">Release Date</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="games-grid" class="games-grid">
+            <!-- Games will be loaded here -->
+          </div>
+
+          <div
+            id="loading-spinner"
+            class="loading-spinner"
+            style="display: none"
+          >
+            <div class="spinner"></div>
+            <p>Loading games...</p>
+          </div>
+
+          <div id="no-results" class="no-results" style="display: none">
+            <div class="no-results-icon">
+              <svg
+                width="64"
+                height="64"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+                <line x1="8" y1="8" x2="16" y2="16"></line>
+              </svg>
+            </div>
+            <h3>No games found</h3>
+            <p>Try adjusting your filters or search terms</p>
+            <button id="reset-search" class="reset-search-btn">
+              Reset Search
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="quick-view-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div id="modal-content-placeholder"></div>
+      </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="js/modules/header-loader.js"></script>
+    <script src="js/modules/footer-loader.js"></script>
+    <script src="js/modules/contact-modal.js"></script>
+    <script src="js/modules/catalog-manager.js"></script>
+    <script src="js/modules/quick-view-modal.js"></script>
+    <script src="js/modules/notification-system.js"></script>
+  </body>
+</html>

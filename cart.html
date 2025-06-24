@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - NexusGaming Store</title>
+    <meta
+      name="description"
+      content="Review your cart and complete your purchase. Secure checkout for PC and Xbox games."
+    />
+    <link rel="stylesheet" href="css/core/base.css" />
+    <link rel="stylesheet" href="css/core/variables.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/notification-system.css" />
+    <link rel="stylesheet" href="css/pages/cart.css" />
+    <link rel="stylesheet" href="css/components/contact-modal.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="cart-main">
+      <section class="cart-hero">
+        <div class="cart-hero-content">
+          <h1 class="cart-title">Shopping Cart</h1>
+          <p class="cart-subtitle">Review your items and proceed to checkout</p>
+        </div>
+      </section>
+
+      <section class="cart-content">
+        <div class="cart-container">
+          <div class="cart-items-section">
+            <div class="cart-header">
+              <h2 class="cart-items-title">Cart Items</h2>
+              <span class="cart-count" id="cart-count">0 items</span>
+            </div>
+
+            <div class="cart-items-list" id="cart-items-list">
+              <!-- Cart items will be loaded here -->
+            </div>
+
+            <div class="empty-cart" id="empty-cart" style="display: none">
+              <div class="empty-cart-icon">
+                <svg
+                  width="120"
+                  height="120"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                >
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path
+                    d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                  ></path>
+                  <path d="M9 12l2 2 4-4"></path>
+                  <path d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"></path>
+                  <path d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"></path>
+                </svg>
+              </div>
+              <h3 class="empty-cart-title">Your cart is empty</h3>
+              <p class="empty-cart-description">
+                Looks like you haven't added any games to your cart yet. Start
+                exploring our collection!
+              </p>
+              <div class="empty-cart-actions">
+                <button
+                  class="browse-games-btn"
+                  onclick="window.location.href='catalog.html'"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                  Browse Games
+                </button>
+                <button
+                  class="featured-games-btn"
+                  onclick="window.location.href='index.html'"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    ></path>
+                  </svg>
+                  Featured Games
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-summary-section">
+            <div class="cart-summary">
+              <h3 class="summary-title">Order Summary</h3>
+
+              <div class="summary-items">
+                <div class="summary-item">
+                  <span class="summary-label">Subtotal</span>
+                  <span class="summary-value" id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Tax</span>
+                  <span class="summary-value" id="tax">$0.00</span>
+                </div>
+                <div class="summary-item discount">
+                  <span class="summary-label">Discount</span>
+                  <span class="summary-value" id="discount">-$0.00</span>
+                </div>
+              </div>
+
+              <div class="summary-total">
+                <span class="total-label">Total</span>
+                <span class="total-value" id="total">$0.00</span>
+              </div>
+
+              <div class="checkout-actions">
+                <button class="checkout-btn" id="checkout-btn" disabled>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 12l2 2 4-4"></path>
+                    <path
+                      d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"
+                    ></path>
+                    <path
+                      d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"
+                    ></path>
+                  </svg>
+                  Proceed to Checkout
+                </button>
+                <button
+                  class="continue-shopping-btn"
+                  onclick="window.location.href='catalog.html'"
+                >
+                  Continue Shopping
+                </button>
+              </div>
+
+              <div class="cart-benefits">
+                <div class="benefit-item">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 12l2 2 4-4"></path>
+                    <path
+                      d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"
+                    ></path>
+                    <path
+                      d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"
+                    ></path>
+                  </svg>
+                  <span>Secure Payment</span>
+                </div>
+                <div class="benefit-item">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 12l2 2 4-4"></path>
+                    <path
+                      d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"
+                    ></path>
+                    <path
+                      d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"
+                    ></path>
+                  </svg>
+                  <span>Instant Download</span>
+                </div>
+                <div class="benefit-item">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 12l2 2 4-4"></path>
+                    <path
+                      d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"
+                    ></path>
+                    <path
+                      d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"
+                    ></path>
+                  </svg>
+                  <span>30-Day Returns</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="js/modules/header-loader.js"></script>
+    <script src="js/modules/footer-loader.js"></script>
+    <script src="js/modules/contact-modal.js"></script>
+    <script src="js/modules/cart-manager.js"></script>
+    <script src="js/modules/notification-system.js"></script>
+  </body>
+</html>

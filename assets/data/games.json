@@ -1,0 +1,438 @@
+{
+  "featured_games": [
+    {
+      "id": "cyberpunk-2077-phantom-liberty",
+      "title": "Cyberpunk 2077: Phantom Liberty",
+      "subtitle": "Expanded Night City Experience",
+      "description": "Return to Night City in this groundbreaking expansion featuring Idris Elba as Solomon Reed. Experience a spy-thriller adventure that will change the fate of the city forever.",
+      "price": 29.99,
+      "original_price": 39.99,
+      "discount": 25,
+      "platforms": ["PC", "Xbox"],
+      "genre": "RPG",
+      "rating": 4.8,
+      "release_date": "2023-09-26",
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "image": "cyberpunk-phantom-liberty.jpg",
+      "features": [
+        "New district: Dogtown",
+        "Spy-thriller storyline",
+        "Idris Elba as Solomon Reed",
+        "Enhanced combat mechanics",
+        "New vehicles and weapons"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "Intel Core i7-6700",
+          "memory": "12 GB RAM",
+          "graphics": "NVIDIA GeForce GTX 1060"
+        }
+      },
+      "tags": ["Open World", "Cyberpunk", "Story Rich", "Action RPG"]
+    },
+    {
+      "id": "starfield-deluxe",
+      "title": "Starfield",
+      "subtitle": "The Greatest Journey Begins",
+      "description": "Bethesda Game Studios presents Starfield - the studio's first new universe in 25 years. Explore over 1000 planets and build your own destiny among the stars.",
+      "price": 69.99,
+      "original_price": 79.99,
+      "discount": 12,
+      "platforms": ["PC", "Xbox"],
+      "genre": "RPG",
+      "rating": 4.6,
+      "release_date": "2023-09-06",
+      "developer": "Bethesda Game Studios",
+      "publisher": "Bethesda Softworks",
+      "image": "starfield.jpg",
+      "features": [
+        "Over 1000 explorable planets",
+        "Deep character customization",
+        "Space combat and exploration",
+        "Base building mechanics",
+        "Mod support"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10/11",
+          "processor": "AMD Ryzen 5 2600X",
+          "memory": "16 GB RAM",
+          "graphics": "AMD RX 5700"
+        }
+      },
+      "tags": ["Space", "RPG", "Open World", "Sci-Fi"]
+    },
+    {
+      "id": "baldurs-gate-3",
+      "title": "Baldur's Gate 3",
+      "subtitle": "Epic Fantasy Adventure",
+      "description": "Gather your party and return to the Forgotten Realms in a tale of fellowship and betrayal, sacrifice and survival, and the lure of absolute power.",
+      "price": 59.99,
+      "original_price": 59.99,
+      "discount": 0,
+      "platforms": ["PC", "Xbox"],
+      "genre": "RPG",
+      "rating": 4.9,
+      "release_date": "2023-08-03",
+      "developer": "Larian Studios",
+      "publisher": "Larian Studios",
+      "image": "baldurs-gate-3.jpg",
+      "features": [
+        "Turn-based combat",
+        "Cooperative multiplayer",
+        "Deep story branching",
+        "Character customization",
+        "D&D 5e ruleset"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "Intel i5-4690",
+          "memory": "8 GB RAM",
+          "graphics": "NVIDIA GTX 970"
+        }
+      },
+      "tags": ["Fantasy", "Turn-Based", "Co-op", "Story Rich"]
+    },
+    {
+      "id": "alan-wake-2",
+      "title": "Alan Wake 2",
+      "subtitle": "Survival Horror Masterpiece",
+      "description": "A string of ritualistic murders threatens Bright Falls, a small-town community surrounded by Pacific Northwest wilderness. Saga Anderson arrives to investigate.",
+      "price": 49.99,
+      "original_price": 59.99,
+      "discount": 17,
+      "platforms": ["PC", "Xbox"],
+      "genre": "Survival Horror",
+      "rating": 4.7,
+      "release_date": "2023-10-27",
+      "developer": "Remedy Entertainment",
+      "publisher": "Epic Games",
+      "image": "alan-wake-2.jpg",
+      "features": [
+        "Dual protagonist gameplay",
+        "Psychological horror",
+        "Ray tracing support",
+        "Atmospheric storytelling",
+        "Survival mechanics"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10/11",
+          "processor": "Intel i5-7600K",
+          "memory": "16 GB RAM",
+          "graphics": "NVIDIA RTX 2060"
+        }
+      },
+      "tags": ["Horror", "Psychological", "Story Rich", "Atmospheric"]
+    },
+    {
+      "id": "mortal-kombat-1",
+      "title": "Mortal Kombat 1",
+      "subtitle": "Reborn and Reimagined",
+      "description": "Discover a reborn Mortal Kombat Universe created by the Fire God Liu Kang. Mortal Kombat 1 ushers in a new era of the iconic franchise with a new fighting system.",
+      "price": 69.99,
+      "original_price": 69.99,
+      "discount": 0,
+      "platforms": ["PC", "Xbox"],
+      "genre": "Fighting",
+      "rating": 4.5,
+      "release_date": "2023-09-19",
+      "developer": "NetherRealm Studios",
+      "publisher": "Warner Bros. Games",
+      "image": "mortal-kombat-1.jpg",
+      "features": [
+        "New fighting system",
+        "Kameo fighters",
+        "Story mode",
+        "Online multiplayer",
+        "Customization options"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "Intel Core i5-6600",
+          "memory": "8 GB RAM",
+          "graphics": "NVIDIA GeForce GTX 980"
+        }
+      },
+      "tags": ["Fighting", "Gore", "Multiplayer", "Action"]
+    },
+    {
+      "id": "diablo-4",
+      "title": "Diablo IV",
+      "subtitle": "Return to Darkness",
+      "description": "Join the eternal struggle between the High Heavens and the Burning Hells in this open-world action RPG. Experience the campaign solo or with friends.",
+      "price": 59.99,
+      "original_price": 69.99,
+      "discount": 14,
+      "platforms": ["PC", "Xbox"],
+      "genre": "Action RPG",
+      "rating": 4.4,
+      "release_date": "2023-06-06",
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "image": "diablo-4.jpg",
+      "features": [
+        "Open world Sanctuary",
+        "Five character classes",
+        "Cross-platform play",
+        "Seasonal content",
+        "PvP zones"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "Intel Core i5-2500K",
+          "memory": "8 GB RAM",
+          "graphics": "NVIDIA GeForce GTX 660"
+        }
+      },
+      "tags": ["Action RPG", "Hack and Slash", "Multiplayer", "Dark Fantasy"]
+    },
+    {
+      "id": "street-fighter-6",
+      "title": "Street Fighter 6",
+      "subtitle": "Fighting Game Evolution",
+      "description": "Experience the fighting game genre's evolution with Street Fighter 6. Choose your way to play and express yourself through an innovative avatar creator.",
+      "price": 49.99,
+      "original_price": 59.99,
+      "discount": 17,
+      "platforms": ["PC", "Xbox"],
+      "genre": "Fighting",
+      "rating": 4.6,
+      "release_date": "2023-06-02",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "image": "street-fighter-6.jpg",
+      "features": [
+        "World Tour mode",
+        "Battle Hub",
+        "Real-time commentary",
+        "Drive System",
+        "Cross-platform play"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "Intel Core i5-7500",
+          "memory": "8 GB RAM",
+          "graphics": "NVIDIA GeForce GTX 1060"
+        }
+      },
+      "tags": ["Fighting", "Competitive", "Multiplayer", "Arcade"]
+    },
+    {
+      "id": "resident-evil-4-remake",
+      "title": "Resident Evil 4",
+      "subtitle": "Survival Horror Redefined",
+      "description": "Survival is just the beginning. Six years have passed since the biological disaster in Raccoon City. Agent Leon S. Kennedy is on a mission to rescue the president's kidnapped daughter.",
+      "price": 39.99,
+      "original_price": 59.99,
+      "discount": 33,
+      "platforms": ["PC", "Xbox"],
+      "genre": "Survival Horror",
+      "rating": 4.8,
+      "release_date": "2023-03-24",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "image": "resident-evil-4.jpg",
+      "features": [
+        "Modernized gameplay",
+        "Enhanced graphics",
+        "Expanded story content",
+        "Mercenaries mode",
+        "Separate Ways DLC"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "AMD Ryzen 3 1200",
+          "memory": "8 GB RAM",
+          "graphics": "AMD Radeon RX 560"
+        }
+      },
+      "tags": ["Horror", "Survival", "Action", "Remake"]
+    },
+    {
+      "id": "dead-space-remake",
+      "title": "Dead Space",
+      "subtitle": "Horror Reimagined",
+      "description": "The sci-fi survival horror classic returns, completely rebuilt from the ground up with elevated visual fidelity and 3D atmospheric audio.",
+      "price": 44.99,
+      "original_price": 69.99,
+      "discount": 36,
+      "platforms": ["PC", "Xbox"],
+      "genre": "Survival Horror",
+      "rating": 4.7,
+      "release_date": "2023-01-27",
+      "developer": "Motive Studio",
+      "publisher": "Electronic Arts",
+      "image": "dead-space-remake.jpg",
+      "features": [
+        "Frostbite engine",
+        "Enhanced audio design",
+        "Improved gameplay mechanics",
+        "Expanded story elements",
+        "Zero-gravity sections"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "Intel Core i5-8600",
+          "memory": "16 GB RAM",
+          "graphics": "NVIDIA RTX 2070"
+        }
+      },
+      "tags": ["Horror", "Sci-Fi", "Survival", "Remake"]
+    },
+    {
+      "id": "hogwarts-legacy",
+      "title": "Hogwarts Legacy",
+      "subtitle": "Magical Open World Adventure",
+      "description": "Experience Hogwarts in the 1800s. Your character is a student who holds the key to an ancient secret that threatens to tear the wizarding world apart.",
+      "price": 54.99,
+      "original_price": 69.99,
+      "discount": 21,
+      "platforms": ["PC", "Xbox"],
+      "genre": "Action RPG",
+      "rating": 4.3,
+      "release_date": "2023-02-10",
+      "developer": "Avalanche Software",
+      "publisher": "Warner Bros. Games",
+      "image": "hogwarts-legacy.jpg",
+      "features": [
+        "Open world exploration",
+        "Magic combat system",
+        "House selection",
+        "Creature companions",
+        "Customizable character"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "Intel Core i5-6600",
+          "memory": "16 GB RAM",
+          "graphics": "NVIDIA GeForce GTX 960"
+        }
+      },
+      "tags": ["Fantasy", "Open World", "Magic", "Adventure"]
+    },
+    {
+      "id": "forza-motorsport",
+      "title": "Forza Motorsport",
+      "subtitle": "Racing Reimagined",
+      "description": "Experience the thrill of motorsport in the most technically advanced racing game ever made. Race with cutting-edge AI, advanced physics, and dynamic weather.",
+      "price": 59.99,
+      "original_price": 69.99,
+      "discount": 14,
+      "platforms": ["PC", "Xbox"],
+      "genre": "Racing",
+      "rating": 4.2,
+      "release_date": "2023-10-10",
+      "developer": "Turn 10 Studios",
+      "publisher": "Xbox Game Studios",
+      "image": "forza-motorsport.jpg",
+      "features": [
+        "Real-time ray tracing",
+        "Advanced AI drivers",
+        "Dynamic weather system",
+        "500+ cars",
+        "20+ tracks"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "Intel i5-8400",
+          "memory": "16 GB RAM",
+          "graphics": "NVIDIA GTX 1060"
+        }
+      },
+      "tags": ["Racing", "Simulation", "Multiplayer", "Sports"]
+    },
+    {
+      "id": "assassins-creed-mirage",
+      "title": "Assassin's Creed Mirage",
+      "subtitle": "Return to Stealth Roots",
+      "description": "Experience the story of Basim, a cunning street thief with nightmarish visions, seeking answers and justice as he navigates the bustling streets of ninth-century Baghdad.",
+      "price": 44.99,
+      "original_price": 49.99,
+      "discount": 10,
+      "platforms": ["PC", "Xbox"],
+      "genre": "Action Adventure",
+      "rating": 4.1,
+      "release_date": "2023-10-05",
+      "developer": "Ubisoft Bordeaux",
+      "publisher": "Ubisoft",
+      "image": "assassins-creed-mirage.jpg",
+      "features": [
+        "Stealth-focused gameplay",
+        "Parkour mechanics",
+        "Historical Baghdad setting",
+        "Assassin tools and gadgets",
+        "Compact open world"
+      ],
+      "system_requirements": {
+        "minimum": {
+          "os": "Windows 10",
+          "processor": "Intel Core i7-4790K",
+          "memory": "8 GB RAM",
+          "graphics": "NVIDIA GeForce GTX 1060"
+        }
+      },
+      "tags": ["Stealth", "Action", "Historical", "Open World"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "action-adventure",
+      "name": "Action Adventure",
+      "description": "Epic journeys and thrilling combat",
+      "icon": "sword-shield",
+      "color": "#e74c3c",
+      "game_count": 45
+    },
+    {
+      "id": "rpg",
+      "name": "Role-Playing Games",
+      "description": "Deep stories and character progression",
+      "icon": "dice",
+      "color": "#f39c12",
+      "game_count": 38
+    },
+    {
+      "id": "fps",
+      "name": "First-Person Shooters",
+      "description": "Intense combat and precision aiming",
+      "icon": "crosshair",
+      "color": "#27ae60",
+      "game_count": 32
+    },
+    {
+      "id": "strategy",
+      "name": "Strategy Games",
+      "description": "Tactical thinking and resource management",
+      "icon": "chess",
+      "color": "#9b59b6",
+      "game_count": 28
+    },
+    {
+      "id": "racing",
+      "name": "Racing Games",
+      "description": "High-speed competition and precision driving",
+      "icon": "car",
+      "color": "#e67e22",
+      "game_count": 25
+    },
+    {
+      "id": "sports",
+      "name": "Sports Games",
+      "description": "Competitive athletics and team play",
+      "icon": "trophy",
+      "color": "#3498db",
+      "game_count": 22
+    }
+  ]
+}

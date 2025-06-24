@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusGaming Store - Premium PC & Xbox Games</title>
+    <meta
+      name="description"
+      content="Discover the best PC and Xbox games at NexusGaming Store. From AAA titles to indie gems, find your next gaming adventure."
+    />
+    <link rel="stylesheet" href="css/core/base.css" />
+    <link rel="stylesheet" href="css/core/variables.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/notification-system.css" />
+    <link rel="stylesheet" href="css/components/game-cards.css" />
+    <link rel="stylesheet" href="css/sections/hero-section.css" />
+    <link rel="stylesheet" href="css/sections/featured-games.css" />
+    <link rel="stylesheet" href="css/sections/categories.css" />
+    <link rel="stylesheet" href="css/sections/testimonials.css" />
+    <link rel="stylesheet" href="css/sections/newsletter.css" />
+    <link rel="stylesheet" href="css/sections/partners.css" />
+    <link rel="stylesheet" href="css/sections/new-sections.css" />
+    <link rel="stylesheet" href="css/components/contact-modal.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-background">
+          <div class="hero-slide active" data-slide="1"></div>
+          <div class="hero-slide" data-slide="2"></div>
+          <div class="hero-slide" data-slide="3"></div>
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="hero-title-line">Discover Your Next</span>
+            <span class="hero-title-line">Gaming Adventure</span>
+          </h1>
+          <p class="hero-description">
+            Explore our curated collection of premium PC and Xbox games. From
+            epic AAA titles to hidden indie gems, find the perfect game for your
+            next adventure.
+          </p>
+
+          <div class="hero-buttons">
+            <button
+              class="hero-btn hero-btn-primary"
+              onclick="window.location.href='catalog.html'"
+            >
+              <span>Explore Games</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            <button class="hero-btn hero-btn-secondary" onclick="showDeals()">
+              <span>Special Deals</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M9 12l2 2 4-4"></path>
+                <path d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"></path>
+                <path d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"></path>
+              </svg>
+            </button>
+            <button
+              class="hero-btn hero-btn-tertiary"
+              onclick="showNewsletterModal()"
+            >
+              <span>Stay Updated</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="assets/public/hero-image.jpg"
+            alt="Hero visual"
+            width="320"
+            height="320"
+          />
+        </div>
+      </section>
+
+      <!-- 1. Epic Game Worlds -->
+      <section class="epic-worlds-section">
+        <div class="epic-worlds-bg">
+          <svg class="epic-wave" viewBox="0 0 1440 320">
+            <path
+              fill="url(#epicGradient)"
+              fill-opacity="1"
+              d="M0,160L80,170.7C160,181,320,203,480,197.3C640,192,800,160,960,154.7C1120,149,1280,171,1360,181.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            ></path>
+            <defs>
+              <linearGradient id="epicGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3fd8c2" />
+                <stop offset="50%" stop-color="#a18fff" />
+                <stop offset="100%" stop-color="#ff7fd8" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="epic-worlds-container">
+          <h2 class="section-title gradient-text">Epic Game Worlds</h2>
+          <div class="worlds-grid">
+            <div class="world-portal sci-fi">
+              <div class="portal-visual"></div>
+              <h3>Sci-Fi Galaxy</h3>
+              <p>Futuristic adventures, space battles, and cyberpunk cities.</p>
+              <button
+                class="portal-btn"
+                onclick="window.location.href='catalog.html'"
+              >
+                Enter World
+              </button>
+            </div>
+            <div class="world-portal fantasy">
+              <div class="portal-visual"></div>
+              <h3>Fantasy Realm</h3>
+              <p>Magic, dragons, and epic quests await your hero.</p>
+              <button
+                class="portal-btn"
+                onclick="window.location.href='catalog.html'"
+              >
+                Enter World
+              </button>
+            </div>
+            <div class="world-portal retro">
+              <div class="portal-visual"></div>
+              <h3>Retro Arcade</h3>
+              <p>Pixel art, chiptune music, and classic gameplay vibes.</p>
+              <button
+                class="portal-btn"
+                onclick="window.location.href='catalog.html'"
+              >
+                Enter World
+              </button>
+            </div>
+            <div class="world-portal sports">
+              <div class="portal-visual"></div>
+              <h3>Sports Arena</h3>
+              <p>Football, racing, and eSports competitions for all.</p>
+              <button
+                class="portal-btn"
+                onclick="window.location.href='catalog.html'"
+              >
+                Enter World
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Live Game Showcase -->
+      <section class="live-showcase-section">
+        <div class="live-showcase-container">
+          <h2 class="section-title gradient-text" style="text-align: center">
+            Live Game Showcase
+          </h2>
+          <div class="showcase-slider">
+            <div class="showcase-slide active">
+              <img src="assets/public/hero-bg1.jpg" alt="Game Live 1" />
+              <div class="showcase-label live">LIVE</div>
+              <div class="showcase-info">
+                <h3>Neon Rivals</h3>
+                <p>Watch the hottest eSports battle right now!</p>
+                <button class="showcase-btn" onclick="openContactModal()">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+            <div class="showcase-slide">
+              <img src="assets/public/hero-bg2.jpg" alt="Game Live 2" />
+              <div class="showcase-label new">NEW</div>
+              <div class="showcase-info">
+                <h3>Starfall</h3>
+                <p>Brand new space adventure just released!</p>
+                <button class="showcase-btn" onclick="openContactModal()">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+            <div class="showcase-slide">
+              <img src="assets/public/hero-bg3.jpg" alt="Game Live 3" />
+              <div class="showcase-label exclusive">EXCLUSIVE</div>
+              <div class="showcase-info">
+                <h3>Pixel Clash</h3>
+                <p>Only on our store — join the retro brawl!</p>
+                <button class="showcase-btn" onclick="openContactModal()">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Gamer's Arsenal -->
+      <section class="arsenal-section">
+        <div class="arsenal-container">
+          <h2 class="section-title gradient-text" style="text-align: center">
+            Gamer's Arsenal
+          </h2>
+          <div class="arsenal-grid">
+            <div class="arsenal-item">
+              <div class="arsenal-icon pc"></div>
+              <h3>Official Keys</h3>
+              <p>Only licensed games and DLCs — no risks, just play.</p>
+            </div>
+            <div class="arsenal-item">
+              <div class="arsenal-icon gamepad"></div>
+              <h3>Instant Delivery</h3>
+              <p>Get your game code in seconds after purchase.</p>
+            </div>
+            <div class="arsenal-item">
+              <div class="arsenal-icon gift"></div>
+              <h3>Gift Cards</h3>
+              <p>Surprise friends with digital presents for any platform.</p>
+            </div>
+            <div class="arsenal-item">
+              <div class="arsenal-icon headset"></div>
+              <h3>Premium Support</h3>
+              <p>Real gamers help you 24/7 — mail or web form.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Hall of Fame -->
+      <section class="hall-of-fame-section">
+        <div class="hall-of-fame-container">
+          <h2 class="section-title gradient-text" style="text-align: center">
+            Hall of Fame
+          </h2>
+          <div class="fame-gallery">
+            <div class="fame-card top">
+              <div class="fame-avatar"></div>
+              <h3>GamerKing</h3>
+              <p>
+                <span class="fame-genres">Racing, Action</span> |
+                <span class="fame-count">57 games</span>
+              </p>
+            </div>
+            <div class="fame-card">
+              <div class="fame-avatar"></div>
+              <h3>PixelQueen</h3>
+              <p>
+                <span class="fame-genres">Indie, RPG</span> |
+                <span class="fame-count">41 games</span>
+              </p>
+            </div>
+            <div class="fame-card">
+              <div class="fame-avatar"></div>
+              <h3>CyberWolf</h3>
+              <p>
+                <span class="fame-genres">Shooter, Sci-Fi</span> |
+                <span class="fame-count">38 games</span>
+              </p>
+            </div>
+            <div class="fame-card">
+              <div class="fame-avatar"></div>
+              <h3>RetroDude</h3>
+              <p>
+                <span class="fame-genres">Retro, Platformer</span> |
+                <span class="fame-count">29 games</span>
+              </p>
+            </div>
+          </div>
+          <button
+            class="fame-btn"
+            onclick="window.location.href='catalog.html'"
+          >
+            Get Featured
+          </button>
+        </div>
+      </section>
+
+      <!-- 5. Next-Gen Experience -->
+      <section class="nextgen-section">
+        <div class="nextgen-container">
+          <div class="nextgen-visual"></div>
+          <div class="nextgen-content">
+            <h2 class="section-title gradient-text">Next-Gen Experience</h2>
+            <p class="nextgen-desc">
+              Step into the future of gaming — early access, exclusive offers,
+              and personal recommendations. Upgrade your journey now!
+            </p>
+            <button class="nextgen-btn" onclick="openContactModal()">
+              Upgrade My Account
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="js/modules/header-loader.js"></script>
+    <script src="js/modules/footer-loader.js"></script>
+    <script src="js/modules/hero-controller.js"></script>
+    <script src="js/modules/contact-modal.js"></script>
+    <script src="js/modules/featured-games.js"></script>
+    <script src="js/modules/categories-display.js"></script>
+    <script src="js/modules/testimonials-display.js"></script>
+    <script src="js/modules/partners-display.js"></script>
+    <script src="js/modules/notification-system.js"></script>
+  </body>
+</html>

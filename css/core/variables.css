@@ -1,0 +1,76 @@
+/* CSS Variables */
+:root {
+  /* Colors */
+  --color-teal: #3fd8c2;
+  --color-lavender: #a18fff;
+  --color-pink: #ff7fd8;
+  --color-gradient: linear-gradient(
+    90deg,
+    #3fd8c2 0%,
+    #a18fff 50%,
+    #ff7fd8 100%
+  );
+
+  /* Accent Colors */
+  --accent-primary: var(--color-lavender);
+  --accent-secondary: var(--color-teal);
+  --accent-tertiary: var(--color-pink);
+
+  /* Text Colors */
+  --text-primary: #23243a;
+  --text-secondary: #6e6b8c;
+  --text-light: #f8fafd;
+
+  /* Background Colors */
+  --bg-primary: #f8fafd;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9e7fa;
+  --bg-dark: #23243a;
+
+  /* Border Colors */
+  --border-primary: #e0e6f7;
+  --border-secondary: #d1d9ec;
+
+  /* Shadow */
+  --shadow-light: 0 2px 8px rgba(63, 216, 194, 0.08);
+  --shadow-medium: 0 4px 16px rgba(161, 143, 255, 0.12);
+  --shadow-heavy: 0 8px 32px rgba(255, 127, 216, 0.16);
+
+  /* Border Radius */
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 16px;
+  --radius-xl: 24px;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+
+  /* Typography */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}

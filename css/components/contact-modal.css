@@ -1,0 +1,240 @@
+/* Contact Modal Styles */
+.contact-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 11000;
+  background: rgba(20, 22, 40, 0.85);
+  animation: fadeIn 0.3s;
+}
+.contact-modal.open {
+  display: flex;
+}
+.contact-modal .modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 22, 40, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+.contact-modal-content {
+  position: relative;
+  z-index: 2;
+  background: var(--white, #fff);
+  border-radius: 18px;
+  max-width: 410px;
+  width: 96vw;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  box-shadow: 0 12px 40px rgba(44, 62, 80, 0.18);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 92vh;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+.contact-modal-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: block;
+}
+.contact-modal-scroll::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+.contact-modal-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.contact-modal-scroll:hover::-webkit-scrollbar-thumb,
+.contact-modal-scroll:active::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #e55a2b 0%, #6c63ff 100%);
+}
+.contact-modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.contact-modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: transparent #ececf6;
+}
+.contact-modal-scroll:hover,
+.contact-modal-scroll:active {
+  scrollbar-color: #6c63ff #ececf6;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.modal-title.gradient-text {
+  flex: 1 1 auto;
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #e55a2b 0%, #6c63ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin: 0;
+}
+.modal-close {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  color: #6c63ff;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+.modal-close:hover {
+  color: #e55a2b;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+.form-group label {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #2d2d44;
+  margin-bottom: 0.1rem;
+}
+.form-group input,
+.form-group textarea {
+  padding: 0.55rem 0.9rem;
+  border: 2px solid #ececf6;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  background: #f8f9fa;
+  color: #222;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 2px #e55a2b33;
+  outline: none;
+}
+.form-error {
+  color: #e55a2b;
+  font-size: 0.88rem;
+  min-height: 1.1em;
+}
+.contact-submit-btn.gradient-btn {
+  background: linear-gradient(90deg, #e55a2b 0%, #6c63ff 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 0;
+  margin-top: 0.4rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.1);
+  letter-spacing: 0.01em;
+}
+.contact-submit-btn.gradient-btn:hover {
+  background: linear-gradient(90deg, #6c63ff 0%, #e55a2b 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.13);
+}
+.contact-info-block {
+  background: linear-gradient(90deg, #f8f9fa 0%, #ececf6 100%);
+  border-radius: 9px;
+  padding: 0.7rem 0.8rem;
+  margin-top: 0.7rem;
+  font-size: 0.97rem;
+  color: #2d2d44;
+  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.07);
+}
+.contact-info-block h3 {
+  font-size: 1.01rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #6c63ff;
+}
+.contact-info-block ul {
+  padding-left: 1.1em;
+  margin: 0;
+}
+.contact-info-block li {
+  margin-bottom: 0.2em;
+}
+.contact-info-block a {
+  color: #e55a2b;
+  text-decoration: underline;
+  word-break: break-all;
+}
+.contact-map-block {
+  margin-top: 0.7rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(44, 62, 80, 0.09);
+}
+.contact-map-block iframe {
+  width: 100%;
+  min-height: 120px;
+  max-height: 180px;
+  border: none;
+  border-radius: 10px;
+  background: #f8f9fa;
+}
+@media (max-width: 600px) {
+  .contact-modal-content {
+    padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+    max-width: 97vw;
+    margin: 0.2vh 0;
+    max-height: 98vh;
+  }
+  .contact-map-block iframe {
+    height: 90px !important;
+    min-height: 70px;
+    max-height: 110px;
+  }
+  .modal-title.gradient-text {
+    font-size: 1.08rem;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(40px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}

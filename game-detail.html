@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyberpunk 2077 - NexusGaming Store</title>
+    <meta
+      name="description"
+      content="Experience the future of gaming with Cyberpunk 2077. Immerse yourself in Night City's neon-lit streets and become a legend."
+    />
+    <link rel="stylesheet" href="css/core/base.css" />
+    <link rel="stylesheet" href="css/core/variables.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/notification-system.css" />
+    <link rel="stylesheet" href="css/pages/game-detail.css" />
+    <link rel="stylesheet" href="css/components/contact-modal.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="game-detail-main">
+      <section class="game-hero">
+        <div class="game-hero-background">
+          <img
+            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=600&fit=crop"
+            alt="Cyberpunk 2077"
+            class="hero-image"
+          />
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="game-hero-content">
+          <div class="game-breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="catalog.html">Games</a>
+            <span class="separator">/</span>
+            <span class="current">Cyberpunk 2077</span>
+          </div>
+
+          <div class="game-hero-info">
+            <div class="game-title-section">
+              <h1 class="game-title">Cyberpunk 2077</h1>
+              <div class="game-meta">
+                <span class="game-developer">CD Projekt Red</span>
+                <span class="game-release">December 10, 2020</span>
+                <span class="game-rating">
+                  <span class="stars">★★★★☆</span>
+                  <span class="rating-text">4.2/5</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="game-purchase-section">
+              <div class="price-display">
+                <span class="original-price">$59.99</span>
+                <span class="current-price">$39.99</span>
+                <span class="discount-badge">-33%</span>
+              </div>
+
+              <div class="purchase-actions">
+                <button class="add-to-cart-btn" id="add-to-cart-btn">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 12l2 2 4-4"></path>
+                    <path
+                      d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"
+                    ></path>
+                    <path
+                      d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"
+                    ></path>
+                  </svg>
+                  Add to Cart
+                </button>
+                <button class="buy-now-btn" id="buy-now-btn">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-content">
+        <div class="content-container">
+          <div class="game-media-section">
+            <div class="main-gallery">
+              <div class="main-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=450&fit=crop"
+                  alt="Cyberpunk 2077 Screenshot"
+                  class="main-image"
+                />
+                <button
+                  class="gallery-nav prev-btn"
+                  aria-label="Previous image"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="15,18 9,12 15,6"></polyline>
+                  </svg>
+                </button>
+                <button class="gallery-nav next-btn" aria-label="Next image">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9,18 15,12 9,6"></polyline>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="thumbnail-gallery">
+                <div
+                  class="thumbnail active"
+                  data-image="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=450&fit=crop"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=150&h=84&fit=crop"
+                    alt="Screenshot 1"
+                  />
+                </div>
+                <div
+                  class="thumbnail"
+                  data-image="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=450&fit=crop"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=150&h=84&fit=crop"
+                    alt="Screenshot 2"
+                  />
+                </div>
+                <div
+                  class="thumbnail"
+                  data-image="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=800&h=450&fit=crop"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=150&h=84&fit=crop"
+                    alt="Screenshot 3"
+                  />
+                </div>
+                <div
+                  class="thumbnail"
+                  data-image="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=450&fit=crop"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=150&h=84&fit=crop"
+                    alt="Screenshot 4"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-details-section">
+            <div class="game-description">
+              <h2>About This Game</h2>
+              <p>
+                Cyberpunk 2077 is an open-world, action-adventure story set in
+                Night City, a megalopolis obsessed with power, glamour and body
+                modification. You play as V, a mercenary outlaw going after a
+                one-of-a-kind implant that is the key to immortality.
+              </p>
+
+              <p>
+                You can customize your character's cyberware, skillset and
+                playstyle, and explore a vast city where the choices you make
+                shape the story and the world around you.
+              </p>
+
+              <div class="game-features">
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                  <li>Open World Action-Adventure</li>
+                  <li>First-Person RPG</li>
+                  <li>Multiple Story Paths</li>
+                  <li>Character Customization</li>
+                  <li>Cyberpunk Setting</li>
+                  <li>Advanced AI Systems</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="game-specifications">
+              <h3>Game Specifications</h3>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Genre:</span>
+                  <span class="spec-value">Action RPG</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Platforms:</span>
+                  <span class="spec-value">PC, Xbox</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">ESRB Rating:</span>
+                  <span class="spec-value">M (Mature)</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Release Date:</span>
+                  <span class="spec-value">December 10, 2020</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Developer:</span>
+                  <span class="spec-value">CD Projekt Red</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Publisher:</span>
+                  <span class="spec-value">CD Projekt</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="system-requirements">
+              <h3>System Requirements</h3>
+              <div class="requirements-tabs">
+                <button class="tab-btn active" data-tab="minimum">
+                  Minimum
+                </button>
+                <button class="tab-btn" data-tab="recommended">
+                  Recommended
+                </button>
+              </div>
+
+              <div class="tab-content active" id="minimum">
+                <div class="requirements-list">
+                  <div class="req-item">
+                    <span class="req-label">OS:</span>
+                    <span class="req-value">Windows 10</span>
+                  </div>
+                  <div class="req-item">
+                    <span class="req-label">Processor:</span>
+                    <span class="req-value"
+                      >Intel Core i5-3570K or AMD FX-8310</span
+                    >
+                  </div>
+                  <div class="req-item">
+                    <span class="req-label">Memory:</span>
+                    <span class="req-value">8 GB RAM</span>
+                  </div>
+                  <div class="req-item">
+                    <span class="req-label">Graphics:</span>
+                    <span class="req-value"
+                      >NVIDIA GeForce GTX 970 or AMD Radeon RX 470</span
+                    >
+                  </div>
+                  <div class="req-item">
+                    <span class="req-label">Storage:</span>
+                    <span class="req-value">70 GB available space</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-content" id="recommended">
+                <div class="requirements-list">
+                  <div class="req-item">
+                    <span class="req-label">OS:</span>
+                    <span class="req-value">Windows 10</span>
+                  </div>
+                  <div class="req-item">
+                    <span class="req-label">Processor:</span>
+                    <span class="req-value"
+                      >Intel Core i7-4790 or AMD Ryzen 3 3200G</span
+                    >
+                  </div>
+                  <div class="req-item">
+                    <span class="req-label">Memory:</span>
+                    <span class="req-value">12 GB RAM</span>
+                  </div>
+                  <div class="req-item">
+                    <span class="req-label">Graphics:</span>
+                    <span class="req-value"
+                      >NVIDIA GeForce GTX 1060 or AMD Radeon RX 590</span
+                    >
+                  </div>
+                  <div class="req-item">
+                    <span class="req-label">Storage:</span>
+                    <span class="req-value">70 GB available space</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="js/modules/header-loader.js"></script>
+    <script src="js/modules/footer-loader.js"></script>
+    <script src="js/modules/contact-modal.js"></script>
+    <script src="js/modules/game-detail-controller.js"></script>
+    <script src="js/modules/notification-system.js"></script>
+  </body>
+</html>

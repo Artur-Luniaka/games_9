@@ -20,15 +20,34 @@
     <div id="header-placeholder"></div>
 
     <main class="cart-main">
+      <!-- Hero Section -->
       <section class="cart-hero">
+        <div class="cart-hero-background">
+          <div class="hero-gradient-overlay"></div>
+        </div>
+
         <div class="cart-hero-content">
-          <h1 class="cart-title">Shopping Cart</h1>
-          <p class="cart-subtitle">Review your items and proceed to checkout</p>
+          <div class="cart-breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="catalog.html">Games</a>
+            <span class="separator">/</span>
+            <span class="current">Shopping Cart</span>
+          </div>
+
+          <div class="cart-hero-info">
+            <h1 class="cart-title">Shopping Cart</h1>
+            <p class="cart-subtitle">
+              Review your items and proceed to checkout
+            </p>
+          </div>
         </div>
       </section>
 
+      <!-- Cart Content -->
       <section class="cart-content">
-        <div class="cart-container">
+        <div class="content-container">
+          <!-- Cart Items Section -->
           <div class="cart-items-section">
             <div class="cart-header">
               <h2 class="cart-items-title">Cart Items</h2>
@@ -103,6 +122,7 @@
             </div>
           </div>
 
+          <!-- Cart Summary Section -->
           <div class="cart-summary-section">
             <div class="cart-summary">
               <h3 class="summary-title">Order Summary</h3>
@@ -116,7 +136,11 @@
                   <span class="summary-label">Tax</span>
                   <span class="summary-value" id="tax">$0.00</span>
                 </div>
-                <div class="summary-item discount">
+                <div
+                  class="summary-item discount"
+                  id="discount-item"
+                  style="display: none"
+                >
                   <span class="summary-label">Discount</span>
                   <span class="summary-value" id="discount">-$0.00</span>
                 </div>

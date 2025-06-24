@@ -1,25 +1,28 @@
-// Cart Manager Module - Handles cart functionality without using 'this'
-const CartManager = {
-  cartItems: [],
-  taxRate: 0.08, // 8% tax rate
-  discountThreshold: 100, // Discount threshold in dollars
-  discountRate: 0.1, // 10% discount
+// Cart Manager Module - Handles cart functionality
+class CartManager {
+  constructor() {
+    this.cartItems = [];
+    this.taxRate = 0.08; // 8% tax rate
+    this.discountThreshold = 100; // Discount threshold in dollars
+    this.discountRate = 0.1; // 10% discount
+    this.init();
+  }
 
   init() {
-    CartManager.loadCart();
-    CartManager.renderCart();
-    CartManager.setupEventListeners();
-    CartManager.updateCartCount();
-  },
+    this.loadCart();
+    this.renderCart();
+    this.setupEventListeners();
+    this.updateCartCount();
+  }
 
   loadCart() {
     const savedCart = localStorage.getItem("nexusCart");
-    CartManager.cartItems = savedCart ? JSON.parse(savedCart) : [];
-  },
+    this.cartItems = savedCart ? JSON.parse(savedCart) : [];
+  }
 
   saveCart() {
-    localStorage.setItem("nexusCart", JSON.stringify(CartManager.cartItems));
-  },
+    localStorage.setItem("nexusCart", JSON.stringify(this.cartItems));
+  }
 
   renderCart() {
     const cartItemsList = document.getElementById("cart-items-list");
@@ -28,18 +31,18 @@ const CartManager = {
 
     if (!cartItemsList) return;
 
-    if (CartManager.cartItems.length === 0) {
+    if (this.cartItems.length === 0) {
       cartItemsList.style.display = "none";
       if (emptyCart) emptyCart.style.display = "block";
       if (cartCount) cartCount.textContent = "0 items";
-      CartManager.updateSummary();
+      this.updateSummary();
       return;
     }
 
     cartItemsList.style.display = "block";
     if (emptyCart) emptyCart.style.display = "none";
 
-    const totalItems = CartManager.cartItems.reduce(
+    const totalItems = this.cartItems.reduce(
       (sum, item) => sum + item.quantity,
       0
     );
@@ -48,10 +51,12 @@ const CartManager = {
         totalItems !== 1 ? "s" : ""
       }`;
 
-    const cartHTML = CartManager.cartItems
+    const cartHTML = this.cartItems
       .map(
         (item, index) => `
-            <div class="cart-item" data-item-id="${item.id}">
+            <div class="cart-item" data-item-id="${
+              item.id
+            }" style="animation-delay: ${index * 0.1}s">
                 <div class="cart-item-image">
                     <img src="${item.image}" alt="${item.title}" loading="lazy">
                 </div>
@@ -100,70 +105,74 @@ const CartManager = {
       .join("");
 
     cartItemsList.innerHTML = cartHTML;
-    CartManager.updateSummary();
-  },
+    this.updateSummary();
+  }
 
   updateSummary() {
     const subtotalElement = document.getElementById("subtotal");
     const taxElement = document.getElementById("tax");
     const discountElement = document.getElementById("discount");
+    const discountItem = document.getElementById("discount-item");
     const totalElement = document.getElementById("total");
     const checkoutBtn = document.getElementById("checkout-btn");
 
-    const subtotal = CartManager.cartItems.reduce(
+    const subtotal = this.cartItems.reduce(
       (sum, item) => sum + parseFloat(item.price) * item.quantity,
       0
     );
-    const tax = subtotal * CartManager.taxRate;
+    const tax = subtotal * this.taxRate;
     const discount =
-      subtotal >= CartManager.discountThreshold
-        ? subtotal * CartManager.discountRate
-        : 0;
+      subtotal >= this.discountThreshold ? subtotal * this.discountRate : 0;
     const total = subtotal + tax - discount;
 
     if (subtotalElement)
       subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
     if (taxElement) taxElement.textContent = `$${tax.toFixed(2)}`;
-    if (discountElement) {
-      discountElement.textContent =
-        discount > 0 ? `-$${discount.toFixed(2)}` : "-$0.00";
-      discountElement.parentElement.style.display =
-        discount > 0 ? "flex" : "none";
+
+    if (discountElement && discountItem) {
+      if (discount > 0) {
+        discountElement.textContent = `-$${discount.toFixed(2)}`;
+        discountItem.style.display = "flex";
+      } else {
+        discountItem.style.display = "none";
+      }
     }
+
     if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
 
     if (checkoutBtn) {
-      checkoutBtn.disabled = CartManager.cartItems.length === 0;
+      checkoutBtn.disabled = this.cartItems.length === 0;
     }
-  },
+  }
 
   updateQuantity(itemId, change) {
-    const item = CartManager.cartItems.find((item) => item.id === itemId);
+    const item = this.cartItems.find((item) => item.id === itemId);
     if (!item) return;
 
     const newQuantity = item.quantity + change;
     if (newQuantity <= 0) {
-      CartManager.removeItem(itemId);
+      this.removeItem(itemId);
     } else {
       item.quantity = newQuantity;
-      CartManager.saveCart();
-      CartManager.renderCart();
-      CartManager.updateCartCount();
+      this.saveCart();
+      this.renderCart();
+      this.updateCartCount();
     }
-  },
+  }
 
   removeItem(itemId) {
-    CartManager.cartItems = CartManager.cartItems.filter(
-      (item) => item.id !== itemId
-    );
-    CartManager.saveCart();
-    CartManager.renderCart();
-    CartManager.updateCartCount();
-    CartManager.showNotification("Item removed from cart", "info");
-  },
+    const item = this.cartItems.find((item) => item.id === itemId);
+    if (!item) return;
+
+    this.cartItems = this.cartItems.filter((item) => item.id !== itemId);
+    this.saveCart();
+    this.renderCart();
+    this.updateCartCount();
+    this.showNotification(`${item.title} removed from cart`, "info");
+  }
 
   updateCartCount() {
-    const totalItems = CartManager.cartItems.reduce(
+    const totalItems = this.cartItems.reduce(
       (sum, item) => sum + item.quantity,
       0
     );
@@ -173,24 +182,24 @@ const CartManager = {
       counter.textContent = totalItems;
       counter.style.display = totalItems > 0 ? "block" : "none";
     });
-  },
+  }
 
   setupEventListeners() {
     // Quantity controls
     document.addEventListener("click", (e) => {
       if (e.target.closest(".decrease-btn")) {
         const itemId = e.target.closest(".decrease-btn").dataset.itemId;
-        CartManager.updateQuantity(itemId, -1);
+        this.updateQuantity(itemId, -1);
       }
 
       if (e.target.closest(".increase-btn")) {
         const itemId = e.target.closest(".increase-btn").dataset.itemId;
-        CartManager.updateQuantity(itemId, 1);
+        this.updateQuantity(itemId, 1);
       }
 
       if (e.target.closest(".remove-item-btn")) {
         const itemId = e.target.closest(".remove-item-btn").dataset.itemId;
-        CartManager.removeItem(itemId);
+        this.removeItem(itemId);
       }
     });
 
@@ -198,40 +207,36 @@ const CartManager = {
     const checkoutBtn = document.getElementById("checkout-btn");
     if (checkoutBtn) {
       checkoutBtn.addEventListener("click", () => {
-        CartManager.proceedToCheckout();
+        this.proceedToCheckout();
       });
     }
-
-    // Keyboard shortcuts
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        // Clear cart confirmation
-        if (CartManager.cartItems.length > 0) {
-          if (confirm("Are you sure you want to clear your cart?")) {
-            CartManager.clearCart();
-          }
-        }
-      }
-    });
-  },
+  }
 
   proceedToCheckout() {
-    if (CartManager.cartItems.length === 0) {
-      CartManager.showNotification("Your cart is empty", "warning");
+    if (this.cartItems.length === 0) {
+      this.showNotification("Your cart is empty", "error");
       return;
     }
 
-    // Redirect to checkout page
-    window.location.href = "checkout.html";
-  },
+    // For now, just show a success message
+    this.showNotification("Proceeding to checkout...", "success");
+
+    // In a real application, you would redirect to a checkout page
+    // window.location.href = "checkout.html";
+
+    // For demo purposes, clear the cart after a delay
+    setTimeout(() => {
+      this.clearCart();
+      this.showNotification("Order completed successfully!", "success");
+    }, 2000);
+  }
 
   clearCart() {
-    CartManager.cartItems = [];
-    CartManager.saveCart();
-    CartManager.renderCart();
-    CartManager.updateCartCount();
-    CartManager.showNotification("Cart cleared", "info");
-  },
+    this.cartItems = [];
+    this.saveCart();
+    this.renderCart();
+    this.updateCartCount();
+  }
 
   showNotification(message, type = "info") {
     // Dispatch custom event for notification system
@@ -239,26 +244,25 @@ const CartManager = {
       detail: { message, type },
     });
     document.dispatchEvent(event);
-  },
+  }
 
-  // Utility functions
   getCartTotal() {
-    return CartManager.cartItems.reduce(
+    return this.cartItems.reduce(
       (sum, item) => sum + parseFloat(item.price) * item.quantity,
       0
     );
-  },
+  }
 
   getCartItemCount() {
-    return CartManager.cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  },
+    return this.cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  }
 
   hasItems() {
-    return CartManager.cartItems.length > 0;
-  },
-};
+    return this.cartItems.length > 0;
+  }
+}
 
 // Initialize cart manager when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  CartManager.init();
+  new CartManager();
 });

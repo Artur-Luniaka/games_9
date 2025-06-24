@@ -60,23 +60,12 @@
 
             <div class="empty-cart" id="empty-cart" style="display: none">
               <div class="empty-cart-icon">
-                <svg
+                <img
+                  src="assets/public/big-cart.png"
+                  alt="Empty cart"
                   width="120"
                   height="120"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1"
-                >
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="20" cy="21" r="1"></circle>
-                  <path
-                    d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-                  ></path>
-                  <path d="M9 12l2 2 4-4"></path>
-                  <path d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"></path>
-                  <path d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"></path>
-                </svg>
+                />
               </div>
               <h3 class="empty-cart-title">Your cart is empty</h3>
               <p class="empty-cart-description">
@@ -236,6 +225,257 @@
                     ></path>
                   </svg>
                   <span>30-Day Returns</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Checkout Section -->
+      <section
+        class="checkout-section"
+        id="checkout-section"
+        style="display: none"
+      >
+        <div class="checkout-container">
+          <div class="checkout-header">
+            <h2 class="checkout-title">Complete Your Order</h2>
+            <p class="checkout-subtitle">
+              Enter your details to complete the purchase
+            </p>
+            <button class="close-checkout-btn" id="close-checkout-btn">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div class="checkout-content">
+            <div class="checkout-form-section">
+              <div class="checkout-form-container">
+                <h3 class="form-title">Customer Information</h3>
+
+                <form class="checkout-form" id="checkout-form" novalidate>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="customer-name" class="form-label"
+                        >Full Name *</label
+                      >
+                      <input
+                        type="text"
+                        id="customer-name"
+                        name="customerName"
+                        class="form-input"
+                        required
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                      />
+                      <div class="form-error" id="name-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="customer-email" class="form-label"
+                        >Email Address *</label
+                      >
+                      <input
+                        type="email"
+                        id="customer-email"
+                        name="customerEmail"
+                        class="form-input"
+                        required
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                      />
+                      <div class="form-error" id="email-error"></div>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="customer-phone" class="form-label"
+                        >Phone Number</label
+                      >
+                      <input
+                        type="tel"
+                        id="customer-phone"
+                        name="customerPhone"
+                        class="form-input"
+                        placeholder="Enter your phone number (optional)"
+                        autocomplete="tel"
+                      />
+                      <div class="form-error" id="phone-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="customer-country" class="form-label"
+                        >Country *</label
+                      >
+                      <select
+                        id="customer-country"
+                        name="customerCountry"
+                        class="form-select"
+                        required
+                      >
+                        <option value="">Select your country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                        <option value="AU">Australia</option>
+                        <option value="JP">Japan</option>
+                        <option value="RU">Russia</option>
+                        <option value="CN">China</option>
+                        <option value="IN">India</option>
+                      </select>
+                      <div class="form-error" id="country-error"></div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="order-notes" class="form-label"
+                      >Order Notes</label
+                    >
+                    <textarea
+                      id="order-notes"
+                      name="orderNotes"
+                      class="form-textarea"
+                      placeholder="Any special instructions or notes for your order"
+                      rows="3"
+                    ></textarea>
+                  </div>
+
+                  <div class="form-actions">
+                    <button
+                      type="submit"
+                      class="place-order-btn"
+                      id="place-order-btn"
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M9 12l2 2 4-4"></path>
+                        <path
+                          d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"
+                        ></path>
+                        <path
+                          d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"
+                        ></path>
+                      </svg>
+                      Place Order
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="checkout-summary-section">
+              <div class="checkout-summary">
+                <h3 class="summary-title">Order Summary</h3>
+
+                <div class="checkout-items" id="checkout-items">
+                  <!-- Checkout items will be loaded here -->
+                </div>
+
+                <div class="checkout-totals">
+                  <div class="total-item">
+                    <span class="total-label">Subtotal</span>
+                    <span class="total-value" id="checkout-subtotal"
+                      >$0.00</span
+                    >
+                  </div>
+                  <div class="total-item">
+                    <span class="total-label">Tax</span>
+                    <span class="total-value" id="checkout-tax">$0.00</span>
+                  </div>
+                  <div
+                    class="total-item discount"
+                    id="checkout-discount-row"
+                    style="display: none"
+                  >
+                    <span class="total-label">Discount</span>
+                    <span class="total-value" id="checkout-discount"
+                      >-$0.00</span
+                    >
+                  </div>
+                  <div class="total-item final-total">
+                    <span class="total-label">Total</span>
+                    <span class="total-value" id="checkout-total">$0.00</span>
+                  </div>
+                </div>
+
+                <div class="checkout-benefits">
+                  <div class="benefit-item">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M9 12l2 2 4-4"></path>
+                      <path
+                        d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"
+                      ></path>
+                      <path
+                        d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"
+                      ></path>
+                    </svg>
+                    <span>Instant Digital Download</span>
+                  </div>
+                  <div class="benefit-item">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M9 12l2 2 4-4"></path>
+                      <path
+                        d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"
+                      ></path>
+                      <path
+                        d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"
+                      ></path>
+                    </svg>
+                    <span>Secure Payment Processing</span>
+                  </div>
+                  <div class="benefit-item">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M9 12l2 2 4-4"></path>
+                      <path
+                        d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"
+                      ></path>
+                      <path
+                        d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"
+                      ></path>
+                    </svg>
+                    <span>30-Day Money Back Guarantee</span>
+                  </div>
                 </div>
               </div>
             </div>

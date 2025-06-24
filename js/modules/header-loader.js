@@ -75,7 +75,7 @@ const headerLoader = {
   updateCartCount() {
     const cartCount = document.getElementById("header-cart-count");
     if (cartCount) {
-      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const cart = JSON.parse(localStorage.getItem("nexusCart") || "[]");
       const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
       if (totalItems > 0) {
@@ -144,6 +144,11 @@ const headerLoader = {
 // Load header when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   headerLoader.loadHeader();
+});
+
+// Listen for cart updates
+document.addEventListener("cartUpdated", () => {
+  headerLoader.updateCartCount();
 });
 
 // Export for use in other modules

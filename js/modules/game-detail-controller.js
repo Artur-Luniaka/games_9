@@ -278,6 +278,9 @@ class GameDetailController {
     // Update header cart count
     this.updateCartCount();
 
+    // Dispatch cart updated event
+    document.dispatchEvent(new CustomEvent("cartUpdated"));
+
     // Show notification
     this.showNotification(`${this.gameData.title} added to cart!`, "success");
   }

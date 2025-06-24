@@ -120,7 +120,7 @@ const contactModal = {
             </div>
             <div class="contact-map-block">
               <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=37.617635%2C55.755814%2C37.617635%2C55.755814&amp;layer=mapnik"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.3056759492795!2d147.30816347531865!3d-42.87129727915501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaa6e75a8a7cb0a73%3A0xa646305ba6b867b4!2s14%20Elphinstone%20Rd%2C%20Mount%20Stuart%20TAS%207000%2C%20Australia!5e0!3m2!1sen!2sau!4v1718389223400!5m2!1sen!2sau"
                 style="
                   border: 0;
                   width: 100%;

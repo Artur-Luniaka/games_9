@@ -329,6 +329,9 @@ class CatalogManager {
     // Update header cart count
     this.updateCartCount();
 
+    // Dispatch cart updated event
+    document.dispatchEvent(new CustomEvent("cartUpdated"));
+
     // Show notification
     this.showNotification(`${game.title} added to cart!`, "success");
   }

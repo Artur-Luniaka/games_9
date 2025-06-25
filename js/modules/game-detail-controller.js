@@ -162,36 +162,6 @@ class GameDetailController {
         </div>
       `;
     }
-
-    // For now, use minimum requirements for recommended as well
-    if (
-      this.gameData.system_requirements &&
-      this.gameData.system_requirements.minimum
-    ) {
-      const recommendedReqs = document.getElementById(
-        "recommended-requirements"
-      );
-      const reqs = this.gameData.system_requirements.minimum;
-
-      recommendedReqs.innerHTML = `
-        <div class="req-item">
-          <span class="req-label">OS:</span>
-          <span class="req-value">${reqs.os}</span>
-        </div>
-        <div class="req-item">
-          <span class="req-label">Processor:</span>
-          <span class="req-value">${reqs.processor}</span>
-        </div>
-        <div class="req-item">
-          <span class="req-label">Memory:</span>
-          <span class="req-value">${reqs.memory}</span>
-        </div>
-        <div class="req-item">
-          <span class="req-label">Graphics:</span>
-          <span class="req-value">${reqs.graphics}</span>
-        </div>
-      `;
-    }
   }
 
   generateStars(rating) {
@@ -205,26 +175,7 @@ class GameDetailController {
   }
 
   setupTabEvents() {
-    const tabButtons = document.querySelectorAll(".tab-btn");
-    const tabContents = document.querySelectorAll(".tab-content");
-
-    tabButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const targetTab = button.dataset.tab;
-
-        // Update active tab button
-        tabButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-
-        // Update active tab content
-        tabContents.forEach((content) => {
-          content.classList.remove("active");
-          if (content.id === targetTab) {
-            content.classList.add("active");
-          }
-        });
-      });
-    });
+    // Оставлено пустым, так как вкладка только одна
   }
 
   setupPurchaseEvents() {

@@ -54,9 +54,7 @@ const footerLoader = {
                                 <div class="footer-links">
                                     <a href="catalog.html" class="footer-link">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M9 12l2 2 4-4"></path>
-                                            <path d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"></path>
-                                            <path d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"></path>
+                                            <!-- удалено: <path d="M9 12l2 2 4-4"></path><path d="M21 12c-1 0-4-1-4-4s3-4 4-4 4 3 4 4-3 4-4 4z"></path><path d="M3 12c1 0 4-1 4-4s-3-4-4-4-4 3-4 4 3 4 4 4z"></path> -->
                                         </svg>
                                         Browse Games
                                     </a>

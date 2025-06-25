@@ -241,6 +241,10 @@ const contactModal = {
       return;
     }
 
+    // Всегда восстанавливаем форму и обработчики при открытии
+    this.restoreContent();
+    this.setupFormValidation();
+
     this.modal.classList.add("open");
     this.modal.style.display = "flex";
     document.body.style.overflow = "hidden";
@@ -296,8 +300,13 @@ const contactModal = {
     const content = this.modal.querySelector(".modal-content");
     if (content && content.dataset.original) {
       content.innerHTML = content.dataset.original;
-      delete content.dataset.original;
-      // Re-setup form after restore
+      // После восстановления формы — обновляем ссылки на элементы
+      this.form = document.getElementById("contact-form");
+      this.nameInput = document.getElementById("contact-name");
+      this.emailInput = document.getElementById("contact-email");
+      this.phoneInput = document.getElementById("contact-phone");
+      this.messageInput = document.getElementById("contact-message");
+      // И повторно навешиваем обработчик submit
       this.setupFormValidation();
     }
   },
